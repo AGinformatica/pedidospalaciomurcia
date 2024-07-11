@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos del Restaurante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pedidos del Restaurante</h1>
+        <button class="btn" onclick="limpiarTabla()">Limpiar Tabla</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Bebida</th>
+                    <th>Comida</th>
+                    <th>Detalles</th>
+                    <th>Hora de Entrega</th>
+                </tr>
+            </thead>
+            <tbody id="pedidosTabla">
+                <!-- Aquí se agregarán los pedidos dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Función para limpiar la tabla de pedidos
+        function limpiarTabla() {
+            const pedidosTabla = document.getElementById('pedidosTabla');
+            pedidosTabla.innerHTML = '';
+        }
+
+        // Función para recibir y mostrar los pedidos en la tabla
+        function recibirPedido(event) {
+            if (event.data && event.data.tipo === 'pedido') {
+                const pedido = event.data.data;
+                const pedidosTabla = document.getElementById('pedidosTabla');
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${pedido.nombre}</td>
+                    <td>${pedido.bebida}</td>
+                    <td>${pedido.comida}</td>
+                    <td>${pedido.detalles}</td>
+                    <td>${pedido.horaEntrega}</td>
+                `;
+                pedidosTabla.appendChild(row);
+            }
+        }
+
+        // Escuchar mensajes enviados desde index.html
+        window.addEventListener('message', recibirPedido);
+
+    </script>
+</body>
+</html>

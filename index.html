@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Desayuno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pedido de Desayuno</h1>
+        <form id="breakfastForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="bebida">Bebida:</label>
+                <select id="bebida" name="bebida" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="sin_bebida">Sin bebida</option>
+                    <option value="cafe">Café</option>
+                    <option value="cafe_con_leche">Café con Leche</option>
+                    <option value="café_con_leche_sl">Café con Leche sin lactosa</option>
+                    <option value="te">Té</option>
+                    <option value="zumo">Zumo</option>
+                    <option value="aquarius">Aquarius</option>
+                    <option value="fanta_limon">Fanta de Limón</option>
+                    <option value="fanta_naranja">Fanta de Naranja</option>
+                    <option value="cocacola">CocaCola</option>
+                    <option value="cocacola_zero">CocaCola Zero</option>
+                    <option value="cocacola_zero_zero">CocaCola Zero Zero</option>
+                    <option value="redbull">RedBull</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comida">Comida:</label>
+                <select id="comida" name="comida" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="tostada_hecha">Tostada Hecha</option>
+                    <option value="tostada_personalizada">Tostada Personalizada</option>
+                    <option value="croissant">Croissant</option>
+                    <option value="napolitana">Napolitana</option>
+                    <option value="donut">Donut</option>
+                    <option value="muffin">Magdalena</option>
+                </select>
+            </div>
+            <div class="form-group" id="tostadaHechaGroup" style="display:none;">
+                <label for="tostada_hecha">Selecciona una Tostada Hecha:</label>
+                <select id="tostada_hecha" name="tostada_hecha">
+                    <option value="tostada_especial">Especial</option>
+                    <option value="tostada_revuelto">Revuelto Ajos con jamón</option>
+                    <option value="tostada_sobrasada_queso">Sobrasada y queso</option>
+                </select>
+            </div>
+            <div class="form-group" id="tipoPanGroup" style="display:none;">
+                <label for="pan">Tipo de Pan:</label>
+                <select id="pan" name="pan">
+                    <option value="blanco">Blanco</option>
+                    <option value="integral">Integral</option>
+                    <option value="cereales">Cereales</option>
+                </select>
+            </div>
+            <div class="form-group" id="ingredientesGroup" style="display:none;">
+                <label for="ingredientes">Ingredientes para la Tostada:</label>
+                <div>
+                    <input type="checkbox" id="aguacate" name="ingredientes" value="aguacate">
+                    <label for="aguacate">Aguacate</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="atun" name="ingredientes" value="atun">
+                    <label for="atun">Atún</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="aceite" name="ingredientes" value="aceite">
+                    <label for="aceite">Aceite</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ahumados" name="ingredientes" value="ahumados">
+                    <label for="ahumados">Ahumados</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="mantequilla" name="ingredientes" value="mantequilla">
+                    <label for="mantequilla">Mantequilla</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="mermelada" name="ingredientes" value="mermelada">
+                    <label for="mermelada">Mermelada</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tomate" name="ingredientes" value="tomate">
+                    <label for="tomate">Tomate</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="queso" name="ingredientes" value="queso">
+                    <label for="queso">Queso</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="queso_fresco" name="ingredientes" value="queso_fresco">
+                    <label for="queso_fresco">Queso fresco</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="jamon" name="ingredientes" value="jamon">
+                    <label for="jamon">Jamón</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="huevo" name="ingredientes" value="huevo">
+                    <label for="huevo">Huevo</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hora">Hora de Entrega:</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
+            <button type="submit">Hacer Pedido</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
