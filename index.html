@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido de Desayuno</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Pedido de Desayuno</h1>
         <form id="breakfastForm">
-            <div class="form-group">
+            <div class="form-group input-small">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
@@ -108,7 +109,7 @@
                     <label for="huevo">Huevo</label>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group input-small">
                 <label for="hora">Hora de Entrega:</label>
                 <input type="time" id="hora" name="hora" required>
             </div>
@@ -116,6 +117,5 @@
         </form>
         <div id="result"></div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

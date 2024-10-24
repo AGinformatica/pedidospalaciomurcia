@@ -15,7 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
-}
+}   
 
 h1 {
     text-align: center;
@@ -60,4 +60,18 @@ button:hover {
 #result {
     margin-top: 20px;
     text-align: center;
+}
+
+.input-small{
+    max-width: max-content;
+    min-width: 94%;
+}
+
+#ingredientesGroup > *{
+    display: flex;
+    flex-direction: row;
+}
+
+#ingredientesGroup > * > *{
+    margin-left: 1em;
 }
